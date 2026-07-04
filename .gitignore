@@ -1,0 +1,38 @@
+# === Dependencies ===
+# Installed packages. Huge, machine-specific, and fully reproducible from
+# package.json + package-lock.json via `npm install`. Never commit these.
+node_modules/
+
+# === Build output ===
+# Compiled JavaScript generated from src/ by tsc. Regenerable at any time,
+# so committing it just creates noise and merge conflicts.
+dist/
+build/
+
+# TypeScript incremental-build cache.
+*.tsbuildinfo
+
+# === Secrets & local config ===
+# API keys, DB URLs, tokens. NEVER commit these. (Habit to build now —
+# Week 3/4 of the plan lean on this hard.) Commit a .env.example instead.
+.env
+.env.*
+!.env.example
+
+# === Logs ===
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+
+# === Test / coverage output ===
+coverage/
+
+# === OS & editor cruft ===
+# macOS Finder metadata — pointless in a repo, and it's everywhere on your machine.
+.DS_Store
+# JetBrains IDE settings (you use Rider/IntelliJ).
+.idea/
+# Keep this if you don't want to share personal VS Code settings:
+# .vscode/
