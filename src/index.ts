@@ -124,4 +124,22 @@ program
             console.log(cards);
     });
 
+program
+    .command("find")
+    .description("Find a card by id")
+    .argument("<id>")
+    .action((id) => {
+        let cardsToPrint: Card[] = [];
+        for (let c of cards) {
+            if (c.id === id) {
+                cardsToPrint.push(c);
+            }
+        }
+
+        if (cardsToPrint.length > 0)
+            for (let ctp of cardsToPrint) console.log(ctp);
+        else
+            console.log("There is no card with the specified id.");
+    });
+
 program.parse();
